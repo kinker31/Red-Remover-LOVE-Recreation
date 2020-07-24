@@ -1,14 +1,14 @@
-local DS = {}
-local DSImage = love.graphics.newImage("shapes/dynamicrectangle.png")
-local DSBody = love.physics.newBody(world, x, y, static)
-function DS:create (x, y, rot, siz)
+local DynamicSquare = {}
+local DynamicSquareImage = love.graphics.newImage("shapes/dynamicrectangle.png")
+local DynamicSquareBody = love.physics.newBody(world, x, y, static)
+function SpawnDynamicSquare (x, y, rot, sizx, sizy)
     self.__index = self
     return setmetatable({
         x = x,
         y = y,
-        Image = DSImage,
-        Body = DSBody,
+        Image = DynamicSquareImage,
+        Body = DynamicSquareBody,
         love.transform.rotate(rot),
-        love.transform.scale(siz),
+        love.transform.scale(sizx, sizy),
     }, self)
 end

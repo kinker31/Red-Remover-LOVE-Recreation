@@ -1,14 +1,14 @@
-local SC = {}
-local SCImage = love.graphics.newImage("shapes/staticcircle.png")
-local SCBody = love.physics.newBody(world, x, y, static)
-function SC:create (x, y, rot, siz)
+local StaticCircle = {}
+local StaticCircleImage = love.graphics.newImage("shapes/staticcircle.png")
+local StaticCircleBody = love.physics.newBody(world, x, y, static)
+function SpawnStaticCircle (x, y, rot, sizx, sizy)
     self.__index = self
     return setmetatable({
         x = x,
         y = y,
-        Image = SCImage,
-        Body = SCBody,
+        Image = StaticCircleImage,
+        Body = StaticCircleBody,
         love.transform.rotate(rot),
-        love.transform.scale(siz),
+        love.transform.StaticCircleale(sizx, sizy),
     }, self)
 end

@@ -1,14 +1,14 @@
-local SS = {}
-local SSImage = love.graphics.newImage("shapes/staticrectangle.png")
-local SSBody = love.physics.newBody(world, x, y, static)
-function SS:create (x, y, rot, siz)
+local StaticSquare = {}
+local StaticSquareImage = love.graphics.newImage("shapes/staticrectangle.png")
+local StaticSquareBody = love.physics.newBody(world, x, y, static)
+function SpawnStaticSquare (x, y, rot, sizx, sizy)
     self.__index = self
     return setmetatable({
         x = x,
         y = y,
-        Image = SSImage,
-        Body = SSBody,
+        Image = StaticSquareImage,
+        Body = StaticSquareBody,
         love.transform.rotate(rot),
-        love.transform.scale(siz),
+        love.transform.scale(sizx, sizy),
     }, self)
 end

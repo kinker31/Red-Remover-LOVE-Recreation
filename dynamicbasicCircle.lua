@@ -1,14 +1,14 @@
-local DC = {}
-local DCImage = love.graphics.newImage("shapes/dynamiccircle.png")
-local DCBody = love.physics.newBody(world, x, y, dynamic)
-function DC:create (x, y, rot, siz)
+local DynamicCircle = {}
+local DynamicCircleImage = love.graphics.newImage("shapes/dynamiccircle.png")
+local DynamicCircleBody = love.physics.newBody(world, x, y, dynamic)
+function SpawnDynamicCircle (x, y, rot, sizx, sizy)
     self.__index = self
     return setmetatable({
         x = x,
         y = y,
-        Image = DCImage,
-        Body = DCBody,
+        Image = DynamicCircleImage,
+        Body = DynamicCircleBody,
         love.transform.rotate(rot),
-        love.transform.scale(siz),
+        love.transform.scale(sizx, sizy),
     }, self)
 end
