@@ -1,6 +1,6 @@
 local DynamicCircle = {}
 local DynamicCircleImage = love.graphics.newImage("shapes/dynamiccircle.png")
-local DynamicCircleBody = love.physics.newBody(world, x, y, dynamic)
+local DynamicCircleBody = love.physics.newBody(world, 1, 1, dynamic)
 local function SpawnDynamicCircle(x, y)
     return setmetatable( 
        {x = x,
@@ -13,4 +13,4 @@ local function SpawnDynamicCircle(x, y)
         Body = StaticSquareBody,})
   end
   return 
-  {spawn = SpawnDynamicCircle,}
+  {spawn = SpawnDynamicCircle}

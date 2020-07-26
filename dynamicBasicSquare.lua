@@ -1,6 +1,6 @@
 local DynamicSquare = {}
 local DynamicSquareImage = love.graphics.newImage("shapes/dynamicrectangle.png")
-local DynamicSquareBody = love.physics.newBody(world, x, y, dynamic)
+local DynamicSquareBody = love.physics.newBody(world, 1, 1, dynamic)
 local function SpawnDynamicSquare(x, y)
     return setmetatable(
        {x = x,
@@ -13,4 +13,4 @@ local function SpawnDynamicSquare(x, y)
         Body = StaticSquareBody,})
 end
   return 
-  {spawn = SpawnDynamicSquare,}
+  {spawn = SpawnDynamicSquare}
