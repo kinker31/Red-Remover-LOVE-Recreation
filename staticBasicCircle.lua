@@ -1,16 +1,8 @@
 local StaticCircle = {}
 local StaticCircleImage = love.graphics.newImage("shapes/staticcircle.png")
-local StaticCircleBody = love.physics.newBody(world, 1, 1, static)
 local function SpawnStaticCircle(x, y)
-    return setmetatable( 
-       {x = x,
-        y = y,
-        Image = DynamicSquareImage,
-        Body = DynamicSquareBody,}, 
-       {x = x,
-        y = y,
-        Image = StaticSquareImage,
-        Body = StaticSquareBody,})
+   StaticCircle.body= love.physics.newBody(world, x, y, static)
+   return StaticCircle
 end
   return 
   {spawn = SpawnStaticCircle}
