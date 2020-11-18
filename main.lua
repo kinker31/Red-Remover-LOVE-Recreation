@@ -6,6 +6,6 @@ function love.draw()
  local DynamicSquare = require "dynamicBasicSquare"
  local StaticCircle = require "staticBasicCircle"
  local DynamicCircle = require "dynamicBasicCircle"
- local squareOne = StaticSquare.spawn(32, 32)
- local circleOne = StaticCircle.spawn(32, 48)
+ local squareOne = StaticSquare.spawn(32, 32, 4, 1)
+ local circleOne = StaticCircle.spawn(32, 48, 2)
 end
